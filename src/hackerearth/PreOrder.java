@@ -1,5 +1,6 @@
 package hackerearth;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
@@ -126,12 +127,44 @@ public class PreOrder {
 		List<Integer> aList = Arrays.asList(a);
 		BTNode n = p.constructBinaryTree(aList, aList.size());
 		p.inOrder(n);
-		System.out.println("inorder iterative ------");
-		p.inOrderIterative(n);
-		System.out.println("preorder iterative ------");
-		p.preOrderIterative(n);
-		System.out.println("postorder iterative ------");
-		p.postOrderTraversal(n);
+		/*
+		 * System.out.println("inorder iterative ------");
+		 * p.inOrderIterative(n); System.out.println("preorder iterative ------"
+		 * ); p.preOrderIterative(n); System.out.println(
+		 * "postorder iterative ------"); p.postOrderTraversal(n);
+		 */
+		List<Integer> l = new ArrayList<Integer>();
+		l = p.serialize(n, l);
+		// System.out.println(l);
+		BTNode node = p.deserialize(l);
+		System.out.println("inorder-- deserialized");
+		p.inOrder(node);
+	}
+
+	public List<Integer> serialize(BTNode n, List<Integer> l) {
+		if (n == null) {
+			l.add(-1);
+			return l;
+		}
+		l.add(n.data);
+		serialize(n.left, l);
+		serialize(n.right, l);
+		return l;
+	}
+
+	public BTNode deserialize(List<Integer> l) {
+		if (l == null) {
+			return null;
+		}
+		int i = l.get(0);
+		System.out.println("l size " + l.size());
+		if (i == -1) {
+			return null;
+		}
+		BTNode node = new BTNode(i);
+		node.left = deserialize(l.subList(1, l.size()));
+		node.right = deserialize(l.subList(1, l.size()));
+		return node;
 	}
 }
 
