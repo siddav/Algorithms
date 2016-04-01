@@ -5,7 +5,10 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class InorderIterative {
+	int j = 10;
+
 	public void inOrder(Node root) {
+		InorderIterative iq = new InorderIterative();
 		if (root == null) {
 			return;
 		}
@@ -41,7 +44,7 @@ public class InorderIterative {
 			}
 		}
 	}
-	
+
 	public void preOder(Node root) {
 
 		if (root == null) {
@@ -55,15 +58,14 @@ public class InorderIterative {
 				stk.push(current);
 				current = current.left;
 			} else {
-				current = stk.pop();				
+				current = stk.pop();
 				current = current.right;
 			}
 		}
-	
-	}
-	
-	public void postOrder(Node root) {
 
+	}
+
+	public void postOrder(Node root) {
 
 		if (root == null) {
 			return;
@@ -71,16 +73,16 @@ public class InorderIterative {
 		Node current = root;
 		Stack<Node> stk = new Stack<Node>();
 		while (current != null || !stk.isEmpty()) {
-			if (current != null) {				
+			if (current != null) {
 				stk.push(current);
 				current = current.left;
 			} else {
-				current = stk.pop();				
+				current = stk.pop();
 				current = current.right;
-				if(current != null)
-				System.out.println(current.data);
+				if (current != null)
+					System.out.println(current.data);
 			}
-		}		
+		}
 	}
 
 	public static void main(String[] args) {

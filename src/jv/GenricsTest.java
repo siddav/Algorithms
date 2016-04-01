@@ -1,9 +1,7 @@
 package jv;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Set;
 
 class A {
@@ -18,15 +16,20 @@ public class GenricsTest {
 	}
 
 	public static void main(String[] args) {
-		int i = 1;
-		int j = 10;
-		do {
-			if (i > j) {
-				break;
-			}
-			j--;
-		} while (++i < 5);
-		System.out.println(i);
-		System.out.println(j);
+		 Set<Integer> hashset= new HashSet<Integer>();
+
+	        hashset.add(null);
+	        hashset.add(22);
+	        hashset.add(222);
+	        hashset.add(null);
+	        hashset.add(11);
+	        hashset.add(233);
+	        //  TreeSet<String> tset=hashset;
+
+	      Iterator<Integer> it = hashset.iterator();
+	        while(it.hasNext()){
+	            Integer i = it.next();
+	            System.out.print(i+" ");
+	        }
 	}
 }
