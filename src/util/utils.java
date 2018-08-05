@@ -11,4 +11,11 @@ public class utils {
 		}
 		return es;
 	}
+
+	public static void printArray(int[] a) {
+		System.out.println("\n---------");
+		for (int i = 0; i < a.length; i++) {
+			System.out.print(a[i] + " ");
+		}
+	}
 }
