@@ -11,7 +11,7 @@ import java.util.List;
  * that does not exist in the array. The array can contain duplicates and
  * negative numbers as well.
  * 
- * For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0]
+ * For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 4,6]
  * should give 3.
  * 
  * @author vsidda
@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class _4_firstMissing {
 	public static void main(String[] args) {
-		int[] a = { 1, 1, 2, 2 };
+		int[] a = { 1, 2, 4, 6 };
 		System.out.println("first missing " + findFirstMissing(a));
 		//System.out.println("first given missing " + findFirstMissing_given(a));		
 	}
