@@ -1,6 +1,6 @@
 package dailycoding;
 
-import org.junit.Assert;
+//import org.junit.Assert;
 
 /**
  * Given the root to a binary tree, implement serialize(root), which serializes
@@ -60,7 +60,7 @@ public class _3_serialize_tree {
 		printNode(node);
 		System.out.println("==============");
 		System.out.println("node.left.value  " + node.left.value);
-		Assert.assertTrue(node.left.value .equalsIgnoreCase("2"));
+//		Assert.assertTrue(node.left.value .equalsIgnoreCase("2"));
 	}
 
 	private static void printNode(SNode node) {
